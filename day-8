@@ -1,0 +1,112 @@
+Q1. Write a C program to find the largest and smallest digit in a given number.
+
+#include <stdio.h>
+int main(){
+    int n;
+    int max=0,min=9;
+    scanf("%d",&n);
+
+    while (n!=0){
+        int last=n%10;
+
+        if(last>max)
+            max=last;
+        if(last<min)
+            min=last;
+        n/=10;
+    }
+    printf("%d\n",max);
+    printf("%d",min);
+    return 0;
+}
+Q2. Check whether the digits of a number are in ascending order
+
+#include <stdio.h>
+
+int main() {
+    int num, prevDigit, currDigit;
+    int isAscending = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    prevDigit = num % 10;  // Last digit
+    num /= 10;
+
+    while (num > 0) {
+        currDigit = num % 10;
+        if (currDigit > prevDigit) {
+            isAscending = 0;
+            break;
+        }
+        prevDigit = currDigit;
+        num /= 10;
+    }
+
+    if (isAscending)
+        printf("Digits are in ascending order.\n");
+    else
+        printf("Digits are not in ascending order.\n");
+
+    return 0;
+}
+Input: 4321 → Output: Digits are not in ascending or
+
+Q3. Print the factorial of a given number N
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long fact = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        printf("Factorial of a negative number doesn't exist.\n");
+    else {
+        for (int i = 1; i <= n; i++)
+            fact *= i;
+        printf("Factorial of %d = %lld\n", n, fact);
+    }
+
+    return 0;
+}
+
+Q4. Calculate count, sum, and product of digits in a given number
+
+#include <stdio.h>
+
+int main() {
+    int num, digit;
+    int count = 0, sum = 0;
+    long long product = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num == 0) {
+        count = 1;
+        sum = 0;
+        product = 0;
+    } else {
+        while (num != 0) {
+            digit = num % 10;
+            count++;
+            sum += digit;
+            product *= digit;
+            num /= 10;
+        }
+    }
+
+    printf("Count of digits: %d\n", count);
+    printf("Sum of digits: %d\n", sum);
+    printf("Product of digits: %lld\n", product);
+
+    return 0;
+}
+Output:
+Count of digits: 4
+Sum of digits: 10
+Product of digits: 24
