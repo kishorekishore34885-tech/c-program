@@ -1,0 +1,92 @@
+Q1. C Program to check whether a character is alphabet or digit
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+    scanf("%c",&ch);
+    if(ch>='A' && ch<='Z' || ch>='a' && ch<='z')
+        printf("Alphabet");
+    else if(ch>='0' && ch <='9')
+        printf("Digit");
+    else
+        printf("Not an Alphabet or Digit");
+    return 0;
+}
+Q2. C Program to check whether a year is a leap year or not
+
+#include <stdio.h>
+
+int main() {
+    int year;
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year");
+
+    return 0;
+}
+
+
+---
+
+Q3. C Program to check grade of a student based on marks (A, B, C, Fail)
+
+#include <stdio.h>
+
+int main() {
+    int marks;
+    scanf("%d", &marks);
+
+    if (marks >= 75)
+        printf("Grade A");
+    else if (marks >= 60)
+        printf("Grade B");
+    else if (marks >= 40)
+        printf("Grade C");
+    else
+        printf("Fail");
+
+    return 0;
+}
+
+
+---
+
+Q4. C Program using switch case to print the season based on month number (Winter, Spring, Summer, Autumn)
+
+#include <stdio.h>
+
+int main() {
+    int month;
+    scanf("%d", &month);
+
+    switch(month) {
+        case 12:
+        case 1:
+        case 2:
+            printf("Winter");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            printf("Spring");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            printf("Summer");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            printf("Autumn");
+            break;
+        default:
+            printf("Invalid month number");
+    }
+
+    return 0;
+}
