@@ -1,0 +1,85 @@
+Q1.Write a C Program to print pass/fail result based on marks.
+	
+#include <stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    printf("%s",(n>=50)?"Pass":"Fail");
+    return 0;
+}
+
+Q2. C Program to find area of Rectangle, Square, Triangle, and Circle
+
+#include <stdio.h>
+#define PI 3.1416
+
+int main() {
+    float length, breadth, side, base, height, radius;
+    float area_rect, area_square, area_triangle, area_circle;
+
+    printf("Enter length and breadth of rectangle: ");
+    scanf("%f %f", &length, &breadth);
+    area_rect = length * breadth;
+    printf("Area of Rectangle = %.2f\n", area_rect);
+
+    printf("Enter side of square: ");
+    scanf("%f", &side);
+    area_square = side * side;
+    printf("Area of Square = %.2f\n", area_square);
+
+    printf("Enter base and height of triangle: ");
+    scanf("%f %f", &base, &height);
+    area_triangle = 0.5 * base * height;
+    printf("Area of Triangle = %.2f\n", area_triangle);
+
+    printf("Enter radius of circle: ");
+    scanf("%f", &radius);
+    area_circle = PI * radius * radius;
+    printf("Area of Circle = %.2f\n", area_circle);
+
+    return 0;
+}
+
+
+---
+
+Q3. C Program to find the distance between two points
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x1, y1, x2, y2, distance;
+
+    printf("Enter coordinates of first point (x1 y1): ");
+    scanf("%f %f", &x1, &y1);
+
+    printf("Enter coordinates of second point (x2 y2): ");
+    scanf("%f %f", &x2, &y2);
+
+    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    printf("Distance between two points = %.2f\n", distance);
+
+    return 0;
+}
+
+
+---
+
+Q4. C Program to Calculate Simple Interest
+
+#include <stdio.h>
+
+int main() {
+    float p, t, r, si;
+
+    printf("Enter principal, time (in years) and rate of interest: ");
+    scanf("%f %f %f", &p, &t, &r);
+
+    si = (p * t * r) / 100;
+
+    printf("Simple Interest = %.2f\n", si);
+
+    return 0;
+}
